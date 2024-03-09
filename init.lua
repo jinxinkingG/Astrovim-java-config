@@ -39,7 +39,7 @@ return {
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
 		opts = function(_, opts)
 			-- use this function notation to build some variables
-			local root_markers = { ".git", "mvnw", "gradlew", "build.gradle", ".project" }
+			local root_markers = { ".git", "mvnw", "gradlew", "build.gradle" }
 			local root_dir = require("jdtls.setup").find_root(root_markers)
 			-- calculate workspace dir
 			local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
