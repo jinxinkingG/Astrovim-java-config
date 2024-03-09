@@ -39,7 +39,7 @@ return {
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
 		opts = function(_, opts)
 			-- use this function notation to build some variables
-			local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle", ".project" }
+			local root_markers = { ".git", "mvnw", "gradlew", "build.gradle", ".project" }
 			local root_dir = require("jdtls.setup").find_root(root_markers)
 			-- calculate workspace dir
 			local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
@@ -165,7 +165,7 @@ return {
 				callback = function()
 					if opts.root_dir and opts.root_dir ~= "" then
 						require("jdtls").start_or_attach(opts)
-					-- require('jdtls.dap').setup_dap_main_class_configs()
+						-- require('jdtls.dap').setup_dap_main_class_configs()
 					else
 						require("astronvim.utils").notify(
 							"jdtls: root_dir not found. Please specify a root marker",
